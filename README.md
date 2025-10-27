@@ -11,7 +11,7 @@ This repository presents a reproducible, data-driven workflow for the computatio
 
 Our framework, called the Comprehensive Method and Mapping (CMM), systematically maps Voynich glyphs and multi-glyph tokens to compact Latin roots, applies contextual grammatical reconstruction, and validates results through statistical and linguistic measures.
 
-The complete manuscript is available here: [Voynich_Decipherment.pdf](output/voynich_decipherment.pdf)   
+The complete manuscript is available here: [Voynich_Decipherment.pdf](output/Voynich_Decipherment.pdf)   
 
 ---
  
