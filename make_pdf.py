@@ -300,6 +300,25 @@ def build_pdf(decoded_csv, metrics_csv, out_pdf, manuscript_img):
     else:
         story.append(Paragraph("Warning: decoded_folios.csv not found; appendix omitted.", styles["Small"]))
 
+    # ---------- Source Code & License ----------
+    story.append(PageBreak())
+    story.append(Paragraph("Source Code and Data Availability", styles["Heading2"]))
+    story.append(Paragraph(
+        "All source code, data processing scripts, and generated results are openly available at the following GitHub repository: "
+        "<a href='https://github.com/keninayoung/Voynich_Pipeline'>https://github.com/keninayoung/Voynich_Pipeline</a>. "
+        "This repository includes the full Voynich glyph-to-Latin mapping pipeline, statistical validation scripts, and PDF generation tools used in this study.",
+        styles["Normal"]
+    ))
+    story.append(Spacer(1, 8))
+
+    story.append(Paragraph("Acknowledgments", styles["Heading2"]))
+    story.append(Paragraph(
+        "Special thanks to the interdisciplinary community of linguists, historians, and AI researchers who have contributed insights into the Voynich mystery. "
+        "This analysis pays homage to Trotula de' Ruggiero, a 12th-century physician whose pioneering work in women's health continues to inspire scientific rediscovery.",
+        styles["Normal"]
+    ))
+    story.append(Spacer(1, 8))
+
     # ---------- References ----------
     story.append(PageBreak())
     story.append(Paragraph("References", styles["Heading2"]))
