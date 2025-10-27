@@ -73,9 +73,9 @@ The script generates figures, inserts manuscript imagery, formats methods and di
 ## Figures
 
 - Figure 1: Z-score Distribution - entropy-based statistical validation
-  ![Z-score](input/entropy_histogram.jpg)
+  ![Z-score Distribution](input/entropy_histogram.jpg)
 - Figure 2: Lexicon Alignment by Folio - top and bottom performing folios
-  ![Z-score](input/fig_alignment.jpg)
+  ![Lexicon Alignment](input/fig_alignment.jpg)
 
 Both figures are generated automatically into the output/figs/ directory and embedded into the PDF.
 
