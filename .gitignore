@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# VS / OS
+.vscode/
+.vs/
+*.user
+*.suo
+.DS_Store
+
+# Data
+example_data/
+synthetic_data/*.tmp
