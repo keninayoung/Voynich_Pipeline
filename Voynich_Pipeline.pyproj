@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2eec4d03-be02-41c6-8ff4-d9af02872cc9</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>voynich_pipeline.py</StartupFile>
+    <StartupFile>make_pdf.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -30,12 +30,17 @@
     <Compile Include="archive\voynich_pipeline_old.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="figs\" />
     <Folder Include="input\" />
     <Folder Include="archive\" />
     <Folder Include="output\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="figs\align.png" />
+    <Content Include="figs\fig_alignment.png" />
+    <Content Include="figs\fig_hist.png" />
+    <Content Include="figs\hist.png" />
     <Content Include="input\IMG_3530.jpg" />
     <Content Include="input\IMG_3532.jpg" />
     <Content Include="input\IMG_3533.jpg" />
@@ -50,6 +55,8 @@
     <Content Include="output\decoded_folios.csv" />
     <Content Include="output\decoded_K_CLAVIS_lat_en.csv" />
     <Content Include="output\decoded_K_COQUERE_lat_en.csv" />
+    <Content Include="output\entropy_histogram.png" />
+    <Content Include="output\fig_alignment.png" />
     <Content Include="output\freq_116v.png" />
     <Content Include="output\freq_1r.png" />
     <Content Include="output\freq_69r.png" />
