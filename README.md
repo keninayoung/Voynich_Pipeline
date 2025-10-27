@@ -29,26 +29,33 @@ The complete manuscript is available here: [Voynich_Decipherment.pdf](output/voy
 ---
 
 ## Repository Structure
-
+```
 Voynich-Decipherment/
 |
 |-- archive/
-|   |-- Arhive files              # Archive files
+|   |-- Arhive files                    # Archive files
+|
+|-- figs/
+|   |-- align.png                       # Lexicon Alignment by Folio
+|   |-- fig_alignment.png               # Lexicon Alignment by Folio
+|   |-- fig_hist.png                    # Entropy / Concentration Z-Score Dist
+|   |-- hist.png                        # Z-Score Dist
 |
 |-- input/
-|   |-- IMG_3532.jpg              # Sample manuscript image
-|   |-- other manuscript images   # (optional)
+|   |-- IMG_3532.jpg                    # Sample manuscript image
+|   |-- other manuscript images         # (optional)
+|   |-- voynich_full_transcription.csv  # Full transcription of Voynich Manuscript
 |
 |-- output/
-|   |-- Voynich_Decipherment.pdf  # Pre-print manuscript
-|   |-- metrics.csv               # Statistical metrics per folio
-|   |-- decoded_folios.csv        # Full per-folio translations
-|   |-- figs/                     # Auto-generated plots (Z-score, alignments)
+|   |-- Voynich_Decipherment.pdf        # Pre-print manuscript
+|   |-- metrics.csv                     # Statistical metrics per folio
+|   |-- decoded_folios.csv              # Full per-folio translations
+|   |-- figs/                           # Auto-generated plots (Z-score, alignments)
 |
-|-- make_pdf.py                   # PDF builder script
-|-- voynich_pipeline.py           # Core pipeline for decoding and metrics
-|-- README.md                     # This file
-
+|-- make_pdf.py                         # PDF builder script
+|-- voynich_pipeline.py                 # Core pipeline for decoding and metrics
+|-- README.md                           # Readme (this file)
+```
 ---
 
 ## Usage
