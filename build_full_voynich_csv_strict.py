@@ -6,15 +6,15 @@ import re
 import argparse
 import pandas as pd
 
-# Defaults match your folder layout
-DEFAULT_INPUT_DIR = "input"
-DEFAULT_OUTPUT_CSV = os.path.join(DEFAULT_INPUT_DIR, "voynich_full_transcription.csv")
+# Defaults match folder layout
+DEFAULT_INPUT_DIR   = "input"
+DEFAULT_OUTPUT_CSV  = os.path.join(DEFAULT_INPUT_DIR, "voynich_full_transcription.csv")
 
 # Robust folio markers commonly found in IVTFF/interlinear files
-TAG_FOLIO = re.compile(r"<f([0-9]{1,3}[rv])>")
-PAGE_HASH = re.compile(r"^\s*#\s*page\s*([0-9]{1,3}[rv])", re.I)
-PAGE_EQ   = re.compile(r"^\s*=\s*([0-9]{1,3}[rv])\s*=")
-FALLBACK  = re.compile(r"\bf([0-9]{1,3}[rv])\b", re.I)
+TAG_FOLIO = re.compile(r"<f0*([0-9]{1,3})([rv])(?:[0-9]*)?(?:\.P\.[0-9]+;[A-Z])?>", re.I)
+PAGE_HASH = re.compile(r"^\s*#\s*page\s*0*([0-9]{1,3})([rv])", re.I)
+PAGE_EQ   = re.compile(r"^\s*=\s*0*([0-9]{1,3})([rv])\s*=", re.I)
+FALLBACK  = re.compile(r"\bf0*([0-9]{1,3})([rv])\b", re.I)
 
 # Seed patterns typical of Voynich EVA tokens
 SEED_PATTERNS = re.compile(
@@ -23,7 +23,7 @@ SEED_PATTERNS = re.compile(
 
 # Tight EVA set and helpers
 EVA_LETTERS = set("acdefghiklmnopqrsty")  # no b j u v w x z
-EVA_TOKEN = re.compile(r"^[acdefghiklmnopqrsty]+$")
+EVA_TOKEN   = re.compile(r"^[acdefghiklmnopqrsty]+$")
 
 # English/meta words we never want
 BAD_WORDS = {
@@ -73,41 +73,45 @@ def is_probably_eva(raw_line):
     return True
 
 def folio_sort_key(folio):
-    m = re.match(r"^(\d+)([rv])$", folio)
-    return (int(m.group(1)), m.group(2)) if m else (9999, folio)
+    m = re.match(r"^0*([0-9]+)([rv])$", folio)
+    if m:
+        num  = int(m.group(1))
+        side = m.group(2)
+        side_ord = 0 if side == 'r' else 1
+        return (num, side_ord)
+    return (9999, 9)
 
 def build_full_csv(ivtt_path, out_csv=DEFAULT_OUTPUT_CSV):
-    """
-    Strictly parse an IVTFF-like interlinear file and write a clean folio,text CSV.
-    Returns the pandas DataFrame written.
-    """
     if not os.path.exists(ivtt_path):
         raise FileNotFoundError("IVTFF file not found: %s" % ivtt_path)
 
-    folio = None
-    buckets = {}
+    folio    = None
+    buckets  = {}
 
     with open(ivtt_path, "r", encoding="utf-8", errors="ignore") as f:
         for raw in f:
-            line = raw.rstrip("\n")
+            if raw.startswith("#"):
+                continue
 
-            # Detect folio change
-            m = TAG_FOLIO.search(line) or PAGE_HASH.search(line) or PAGE_EQ.search(line)
+            line = raw.rstrip("\n")
+            m    = TAG_FOLIO.search(line) or PAGE_HASH.search(line) or PAGE_EQ.search(line)
             if m:
-                folio = m.group(1).lower()
+                folnum  = m.group(1).lstrip("0")
+                folside = m.group(2).lower()
+                folio   = folnum + folside
                 buckets.setdefault(folio, [])
                 continue
 
-            # Fallback folio inference if not yet set
             if not folio:
                 m2 = FALLBACK.search(line)
                 if m2:
-                    folio = m2.group(1).lower()
+                    folnum  = m2.group(1).lstrip("0")
+                    folside = m2.group(2).lower()
+                    folio   = folnum + folside
                     buckets.setdefault(folio, [])
                 else:
                     continue
 
-            # Keep only EVA-like lines
             if is_probably_eva(line):
                 buckets[folio].append(clean_text(line))
 
@@ -118,7 +122,7 @@ def build_full_csv(ivtt_path, out_csv=DEFAULT_OUTPUT_CSV):
             rows.append({"folio": fol, "text": text})
 
     rows = sorted(rows, key=lambda r: folio_sort_key(r["folio"]))
-    df = pd.DataFrame(rows)
+    df   = pd.DataFrame(rows)
     os.makedirs(os.path.dirname(out_csv) or ".", exist_ok=True)
     df.to_csv(out_csv, index=False)
     print("[OK] wrote %d folios to %s" % (len(df), out_csv))

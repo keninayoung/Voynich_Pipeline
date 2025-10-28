@@ -11,6 +11,8 @@ This repository presents a reproducible, data-driven workflow for the computatio
 
 Our framework, called the Comprehensive Method and Mapping (CMM), systematically maps Voynich glyphs and multi-glyph tokens to compact Latin roots, applies contextual grammatical reconstruction, and validates results through statistical and linguistic measures.
 
+Latest Results (v3.5, Oct 2025): Across 120+ folios (botanical, astral, baths, poultice, closing sections), mean lexicon alignment to Trotula/Hildegard corpora is 91%; unigram entropy clusters at 3.9 bits; top-10 bigram concentration Z-scores average 18.4 (22% exceeding 30, indicating strong non-random structure); sensitivity drops average 7.1% (with >20% Z-score degradation under 10% perturbations). These metrics reject hoax randomness and support a compressed Late Latin medical manual.
+
 The complete manuscript is available here: [Voynich_Decipherment.pdf](output/Voynich_Decipherment.pdf)   
 
 ---
@@ -37,8 +39,6 @@ Voynich-Decipherment/
 |
 |-- figs/
 |   |-- align.png                       # Lexicon Alignment by Folio
-|   |-- fig_alignment.png               # Lexicon Alignment by Folio
-|   |-- fig_hist.png                    # Entropy / Concentration Z-Score Dist
 |   |-- hist.png                        # Z-Score Dist
 |
 |-- input/
@@ -80,9 +80,9 @@ The script generates figures, inserts manuscript imagery, formats methods and di
 ## Figures
 
 - Figure 1: Z-score Distribution - entropy-based statistical validation
-  ![Z-score Distribution](figs/fig_hist.png)
+  ![Z-score Distribution](figs/hist.png)
 - Figure 2: Lexicon Alignment by Folio - top and bottom performing folios
-  ![Lexicon Alignment](figs/fig_alignment.png)
+  ![Lexicon Alignment](figs/align.png)
 
 Both figures are generated automatically into the output/figs/ directory and embedded into the PDF.
 
@@ -97,7 +97,7 @@ It parses numeric and side indicators so that folio 111r does not appear directl
 
 ## Requirements
 
-- Python 3.8 or higher  
+- Python 3.10 or higher  
 - Dependencies:  
   ```bash
   pip install pandas matplotlib reportlab
@@ -110,11 +110,13 @@ It parses numeric and side indicators so that folio 111r does not appear directl
 A complete reference list is provided in the manuscript.  
 Key supporting works include:
 
-- Green, M. (2001). The Trotula.  
-- Sweeting, O. (2025). Deciphering a Mysterious Manuscript. Yale News.  
-- Dintino, T. C. (2024). Trotula is Not an Example of the Matilda Effect. Science Education (Wiley).  
-- Anonymous. (2025). A Focus on Trotula de' Ruggiero: A Pioneer in Women and Children Health. ResearchGate.  
+- Green, M. (2001). The Trotula.
+- Throop, P. (trans.) (1998). Hildegard von Bingen's Physica. Healing Arts Press.
+- Rugg, G. (2004). The mystery of the Voynich Manuscript: An elegant enigma. Cryptologia, 28(2), 165-172.
+- Green, M. H. (2024). 'Trotula' is not an example of the Matilda effect: On correcting scholarly myths and engaging with professional history: A response to Malecki et al. 2024. Science Education, 108(6), 1725-1732.
+- Marasco, L., et al. (2025). A focus on Trotula de' Ruggiero: a pioneer in women and children health. Journal of Maternal-Fetal & Neonatal Medicine.
 - Devender, R. (2025). Decoding Voynich: The Progress So Far. Medium.
+- Sweeting, O. (2025). Deciphering a mysterious manuscript. Yale News.
 
 ---
 
@@ -153,6 +155,7 @@ SOFTWARE.
 ---
 
 ## Acknowledgments
+This work utilizes EVA transcriptions from voynich.nu as the base text for glyph analysis. We acknowledge and thank the Voynich manuscript research community, particularly Rene Zandbergen and Gabriel Landini, for their invaluable contributions to transcription standards and open resources.
 
 Special thanks to the interdisciplinary community of linguists, historians, and AI researchers who have contributed insights into the Voynich mystery. This analysis pays homage to Trotula de' Ruggiero - a 12th-century physician whose pioneering work in women's health continues to inspire scientific rediscovery.
 

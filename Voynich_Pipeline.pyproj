@@ -38,8 +38,6 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include="figs\align.png" />
-    <Content Include="figs\fig_alignment.png" />
-    <Content Include="figs\fig_hist.png" />
     <Content Include="figs\hist.png" />
     <Content Include="input\IMG_3530.jpg" />
     <Content Include="input\IMG_3532.jpg" />
@@ -56,7 +54,6 @@
     <Content Include="output\decoded_K_CLAVIS_lat_en.csv" />
     <Content Include="output\decoded_K_COQUERE_lat_en.csv" />
     <Content Include="output\entropy_histogram.png" />
-    <Content Include="output\fig_alignment.png" />
     <Content Include="output\freq_116v.png" />
     <Content Include="output\freq_1r.png" />
     <Content Include="output\freq_69r.png" />
