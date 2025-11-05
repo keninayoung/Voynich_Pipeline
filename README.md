@@ -20,8 +20,6 @@ The complete manuscript is available here: [Voynich_Decipherment.pdf](output/Voy
  ![Voynich Image](input/voynich_pages.jpg)
 
 ---
-
----
  
  ![Comparison Image](figs/comp.png)
 
@@ -94,9 +92,9 @@ Both figures are generated automatically into the output/figs/ directory and emb
 
 ---
 
-## Lunar Synchronization and Women’s Health Connection
+## Lunar Synchronization and Womenâ€™s Health Connection
 
-Recent analyses of the Voynich Manuscript using the CMM reveal consistent Latin roots and phrases related to women’s health, cleansing, and lunar timing.
+Recent analyses of the Voynich Manuscript using the CMM reveal consistent Latin roots and phrases related to womenâ€™s health, cleansing, and lunar timing.
 Key recurring terms include luna (moon), aqua (water), oleum (oil), vitalis (vital/life), and tempus (time), appearing most frequently in the Astral and Baths folios.
 
 These sections describe procedures such as:
@@ -105,14 +103,14 @@ These sections describe procedures such as:
 | --------------- | -------------------------------- | ------------------------------------- |
 | Lunar timing    | luna, lux, tempus                | "Apply oil under moonlight."          |
 | Vital energy    | vitalis, radialis, physis        | "Dose for vital strength."            |
-| Women’s health  | femina, caput humus, aqua, oleum | "Apply water to the woman's head."    |
+| Womenâ€™s health  | femina, caput humus, aqua, oleum | "Apply water to the woman's head."    |
 | Ritual practice | quando, fac, usa                 | "When moon rises, perform cleansing." |
 
-This aligns with modern findings on lunar–menstrual synchronization. A 2025 study published in Science Advances (de Bruyn et al., DOI: 10.1126/sciadv.adw4096) 
-found that women’s menstrual cycles still show detectable synchronization with lunar phases, especially near full moon and perigee.
+This aligns with modern findings on lunarâ€“menstrual synchronization. A 2025 study published in Science Advances (de Bruyn et al., DOI: 10.1126/sciadv.adw4096) 
+found that womenâ€™s menstrual cycles still show detectable synchronization with lunar phases, especially near full moon and perigee.
 
 These results suggest that the Voynich Manuscript may describe practical and ritual procedures grounded in ancient observations of lunar cycles 
-influencing women’s physiology, echoing later medieval texts such as Trotula and Hildegard von Bingen’s Physica.
+influencing womenâ€™s physiology, echoing later medieval texts such as Trotula and Hildegard von Bingenâ€™s Physica.
 
 ---
 
