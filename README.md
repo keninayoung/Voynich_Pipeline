@@ -11,7 +11,7 @@ This repository presents a reproducible, data-driven workflow for the computatio
 
 Our framework, called the Comprehensive Method and Mapping (CMM), systematically maps Voynich glyphs and multi-glyph tokens to compact Latin roots, applies contextual grammatical reconstruction, and validates results through statistical and linguistic measures.
 
-Latest Results (v3.5, Oct 2025): Across 120+ folios (botanical, astral, baths, poultice, closing sections), mean lexicon alignment to Trotula/Hildegard corpora is 91%; unigram entropy clusters at 3.9 bits; top-10 bigram concentration Z-scores average 18.4 (22% exceeding 30, indicating strong non-random structure); sensitivity drops average 7.1% (with >20% Z-score degradation under 10% perturbations). These metrics reject hoax randomness and support a compressed Late Latin medical manual.
+Latest Results (Nov 2025): Across 120+ folios (botanical, astral, baths, poultice, closing sections), mean lexicon alignment to Trotula/Hildegard corpora is 91%; unigram entropy clusters at 3.9 bits; top-10 bigram concentration Z-scores average 18.4 (22% exceeding 30, indicating strong non-random structure); sensitivity drops average 7.1% (with >20% Z-score degradation under 10% perturbations). These metrics reject hoax randomness and support a compressed Late Latin medical manual.
 
 The complete manuscript is available here: [Voynich_Decipherment.pdf](output/Voynich_Decipherment.pdf)   
 
