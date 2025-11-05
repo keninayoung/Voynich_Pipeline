@@ -211,7 +211,7 @@ def build_pdf(decoded_csv, metrics_csv, out_pdf, manuscript_img):
     # ---------- Title and Abstract FIRST ----------
     story.append(Paragraph("Deciphering the Voynich Manuscript with the Comprehensive Method and Mapping (CMM)", styles["Heading1"]))
     story.append(Paragraph("Kenneth Young, PhD", styles["Normal"]))
-    story.append(Paragraph("October 28, 2025", styles["Normal"]))
+    story.append(Paragraph("November 05, 2025", styles["Normal"]))
     story.append(Spacer(1, 6))
     story.append(Paragraph("Abstract", styles["Heading2"]))
     abstract_txt = (
@@ -235,6 +235,19 @@ def build_pdf(decoded_csv, metrics_csv, out_pdf, manuscript_img):
         story.append(im)
         story.append(Spacer(1, 6))
     story.append(PageBreak())
+
+    # ---------- Modern Science Connection ----------
+    # Brief bridge to modern evidence on lunar synchronization
+    story.append(Paragraph("Connection to Modern Evidence", styles["Heading2"]))
+    story.append(Paragraph(
+        "The repeated appearance of 'luna' (moon), 'tempus' (time), and procedure verbs in astral and baths folios "
+        "suggests ritual timing. Recent research in Science Advances (de Bruyn et al., 2025) reports that women's "
+        "menstrual cycles still show detectable synchronization with lunar phases when gravitational pull is strong. "
+        "This modern finding converges with the manuscript's frequent lunar timing cues in women's health contexts.",
+        styles["Normal"]
+    ))
+    story.append(Spacer(1, 8))
+
     # ---------- Methods ----------
     story.append(Paragraph("Methods: Comprehensive Method and Mapping (CMM)", styles["Heading2"]))
     methods_lines = [
@@ -270,6 +283,9 @@ def build_pdf(decoded_csv, metrics_csv, out_pdf, manuscript_img):
         story.append(im2)
         story.append(Paragraph("Figure 2. Lexicon alignment for Top and Bottom folios. Full table follows.", styles["Small"]))
     story.append(Spacer(1, 8))
+
+   
+
     
     # # metrics table (wrapped, auto-split, no overflow) - COMPACT: key cols only
     # if os.path.exists(metrics_csv):
@@ -376,13 +392,31 @@ def build_pdf(decoded_csv, metrics_csv, out_pdf, manuscript_img):
         "Brevity in closing folios (e.g., 116r Z=39.9) inflates variance, warranting expanded corpora.",
         styles["Normal"]
     ))
-    story.append(Paragraph("3. Future Directions", styles["Heading3"]))
+
+
+    story.append(Paragraph("3. Link to Lunar-Menstrual Synchronization", styles["Heading3"]))
+    story.append(Paragraph(
+        "Across astral and baths folios, the decoding repeatedly references lunar timing ('luna', 'tempus') for "
+        "applications with water and oil in women's health contexts. This aligns with recent empirical findings that "
+        "women's menstrual cycles can exhibit detectable synchronization with lunar phases, particularly near full moon "
+        "and perigee (de Bruyn et al., 2025). While the manuscript itself is medieval and prescriptive rather than "
+        "observational science, the concordance between procedural timing in the text and modern evidence strengthens "
+        "the interpretation that lunar cues were considered operationally relevant in women's health practices.",
+        styles["Normal"]
+    ))
+    story.append(Spacer(1, 8))
+
+
+    story.append(Paragraph("4. Future Directions", styles["Heading3"]))
     story.append(Paragraph(
         "Extensions include AI perplexity validation against 2025 medieval datasets [Devender, 2025] and multispectral predictions for unsolved sections "
         "(e.g., 86v Rosettes as 'clavis luna' alchemical keys). Collaboration with Yale's Beinecke could test scribe hypotheses [Anonymous, 2024]. "
         "Ultimately, CMM invites empirical trials: Translate a 'blind' folio and compare to illustrations for herb-specific matches.",
         styles["Normal"]
     ))
+
+
+
     story.append(PageBreak())
     # ---------- Appendix: translations ----------
     if os.path.exists(decoded_csv):
@@ -447,7 +481,8 @@ def build_pdf(decoded_csv, metrics_csv, out_pdf, manuscript_img):
         "Marasco, L., et al. (2025). A focus on Trotula de' Ruggiero: a pioneer in women and children health. Journal of Maternal-Fetal & Neonatal Medicine.",
         "Devender, R. (2025). Decoding Voynich: The Progress So Far. Medium.",
         "Green, M. H. (2024). 'Trotula' is not an example of the Matilda effect: On correcting scholarly myths and engaging with professional history: A response to Malecki et al. 2024. Science Education, 108(6), 1725-1732.",
-        "Sweeting, O. (2025). Deciphering a mysterious manuscript. Yale News."
+        "Sweeting, O. (2025). Deciphering a mysterious manuscript. Yale News.",
+         "de Bruyn, C., et al. (2025). Synchronization of women's menstruation with the Moon has decreased but remains detectable when gravitational pull is strong. Science Advances."
     ]
     story.append(Paragraph("<br/><br/>".join(refs), styles["Small"]))
     doc = SimpleDocTemplate(out_pdf, pagesize=letter,

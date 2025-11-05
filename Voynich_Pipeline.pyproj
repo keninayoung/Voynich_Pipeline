@@ -38,6 +38,7 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include="figs\align.png" />
+    <Content Include="figs\comp.png" />
     <Content Include="figs\hist.png" />
     <Content Include="input\IMG_3530.jpg" />
     <Content Include="input\IMG_3532.jpg" />
